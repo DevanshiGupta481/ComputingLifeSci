@@ -1,78 +1,145 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+<!DOCTYPE html>
+<html lang="en">
 
-const Header = () => (
-  <header className="bg-blue-900 text-white p-6 text-center">
-    <img src="/logo.jpg" alt="Logo" className="mx-auto w-24 mb-4" />
-    <h1 className="text-3xl font-bold">ComputingLifeSci</h1>
-    <p className="text-lg">Free Computational Biology Courses for Everyone</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ComputingLifeSci</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004466;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #e3e3e3;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 10px;
+      text-decoration: none;
+      color: #004466;
+      font-weight: bold;
+    }
+    .section {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 5px #ccc;
+    }
+    footer {
+      background: #004466;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      max-width: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.jpg" alt="ComputingLifeSci Logo" class="logo" />
+    <h1>ComputingLifeSci</h1>
+    <p>Free Computational Biology Courses for Everyone</p>
   </header>
-);
 
-const Footer = () => (
-  <footer className="bg-blue-900 text-white text-center p-4 mt-12">
-    <p>
-      Follow us on:
-      <a href="https://www.linkedin.com/in/computing-lifesci-562132296" className="underline ml-2 mr-2" target="_blank" rel="noopener noreferrer">LinkedIn</a>|
-      <a href="https://www.instagram.com/computinglifesci?utm_source=qr&igsh=MWRkcTRycWJtanZjeQ==" className="underline ml-2" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </p>
-    <p className="mt-2">&copy; 2025 ComputingLifeSci. All Rights Reserved.</p>
-  </footer>
-);
-
-const CourseSection = ({ title, id, description, videoId }) => (
-  <section id={id} className="bg-white rounded-2xl shadow-md p-6 my-6 mx-auto max-w-3xl">
-    <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-    <iframe
-      className="w-full aspect-video rounded"
-      src={`https://www.youtube.com/embed/${videoId}`}
-      title={title}
-      frameBorder="0"
-      allowFullScreen
-    ></iframe>
-    <p className="mt-4 text-gray-700">{description}</p>
-  </section>
-);
-
-const Home = () => (
-  <>
-    <CourseSection
-      id="python"
-      title="Python for Biologist"
-      videoId="kqtD5dpn9C8" // Example video
-      description="Learn Python programming with practical applications in biological sciences."
-    />
-    <CourseSection
-      id="r"
-      title="R for Biologist"
-      videoId="_V8eKsto3Ug" // Example video
-      description="Introduction to data analysis in biology using R."
-    />
-  </>
-);
-
-const Navbar = () => (
-  <nav className="bg-gray-100 p-4 flex flex-wrap justify-center gap-4 text-blue-900 font-semibold text-sm md:text-base">
-    <Link to="#python" className="hover:underline">Python</Link>
-    <Link to="#r" className="hover:underline">R</Link>
+  <nav>
+    <a href="#r">R for Biologist</a>
+    <a href="#python">Python for Biologist</a>
+    <a href="#matlab">MATLAB for Biologist</a>
+    <a href="#webdev">Database & Web Dev</a>
+    <a href="#ml">Machine Learning</a>
+    <a href="#ai">AI & Deep Learning</a>
+    <a href="#image">Image Processing</a>
+    <a href="#data">Data Analysis</a>
+    <a href="#math">Mathematical Modeling</a>
+    <a href="#sas">SAS</a>
+    <a href="#neuro">Neuroscience</a>
+    <a href="#med">Medical Coding</a>
+    <a href="#bigdata">Big Data</a>
+    <a href="#cloud">Cloud Computing</a>
   </nav>
-);
 
-function App() {
-  return (
-    <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Header />
-        <Navbar />
-        <main className="px-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
-}
+  <main>
+    <div class="section" id="r">
+      <h2>R for Biologist</h2>
+      <p>Video tutorials, projects, and notes to get started with R in biological data analysis.</p>
+    </div>
+    <div class="section" id="python">
+      <h2>Python for Biologist</h2>
+      <p>Learn Python programming with biological data applications.</p>
+    </div>
+    <div class="section" id="matlab">
+      <h2>MATLAB for Biologist</h2>
+      <p>Explore signal processing and modeling using MATLAB in biology.</p>
+    </div>
+    <div class="section" id="webdev">
+      <h2>Developing a Database + Web Course</h2>
+      <p>Learn how to develop and deploy biological databases using HTML, CSS, JS, and Python.</p>
+    </div>
+    <div class="section" id="ml">
+      <h2>Machine Learning for Biologist</h2>
+      <p>Machine learning concepts tailored for biological data.</p>
+    </div>
+    <div class="section" id="ai">
+      <h2>AI and Deep Learning for Biologist</h2>
+      <p>Understand and apply AI/Deep Learning tools in biology.</p>
+    </div>
+    <div class="section" id="image">
+      <h2>Image Processing for Biologist</h2>
+      <p>Techniques for processing biological and medical images.</p>
+    </div>
+    <div class="section" id="data">
+      <h2>Data Analysis for Biologist</h2>
+      <p>Biological datasets, statistical tools, and practical analysis.</p>
+    </div>
+    <div class="section" id="math">
+      <h2>Mathematical Modeling</h2>
+      <p>Modeling techniques using MATLAB and XAMPP in biology.</p>
+    </div>
+    <div class="section" id="sas">
+      <h2>SAS for Biologist</h2>
+      <p>Introduction to SAS software for life sciences applications.</p>
+    </div>
+    <div class="section" id="neuro">
+      <h2>R for Neuroscience</h2>
+      <p>R-based tools for analyzing neuroscience datasets.</p>
+    </div>
+    <div class="section" id="med">
+      <h2>Medical Coding</h2>
+      <p>Course on medical coding with real-world applications in healthcare.</p>
+    </div>
+    <div class="section" id="bigdata">
+      <h2>Big Data in Healthcare</h2>
+      <p>Big data tools and frameworks relevant to biological and medical research.</p>
+    </div>
+    <div class="section" id="cloud">
+      <h2>Cloud Computing for Biologist</h2>
+      <p>Use cloud platforms to analyze and store large-scale biological data.</p>
+    </div>
+  </main>
 
-export default App;
+  <footer>
+    <p>Follow us on:
+      <a href="https://www.linkedin.com/in/computing-lifesci-562132296" target="_blank" style="color: #ffffff; text-decoration: underline;">LinkedIn</a> |
+      <a href="https://www.instagram.com/computinglifesci?utm_source=qr&igsh=MWRkcTRycWJtanZjeQ==" target="_blank" style="color: #ffffff; text-decoration: underline;">Instagram</a>
+    </p>
+    <p>&copy; 2025 ComputingLifeSci. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

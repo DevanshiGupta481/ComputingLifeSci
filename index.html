@@ -1,0 +1,78 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+const Header = () => (
+  <header className="bg-blue-900 text-white p-6 text-center">
+    <img src="/logo.jpg" alt="Logo" className="mx-auto w-24 mb-4" />
+    <h1 className="text-3xl font-bold">ComputingLifeSci</h1>
+    <p className="text-lg">Free Computational Biology Courses for Everyone</p>
+  </header>
+);
+
+const Footer = () => (
+  <footer className="bg-blue-900 text-white text-center p-4 mt-12">
+    <p>
+      Follow us on:
+      <a href="https://www.linkedin.com/in/computing-lifesci-562132296" className="underline ml-2 mr-2" target="_blank" rel="noopener noreferrer">LinkedIn</a>|
+      <a href="https://www.instagram.com/computinglifesci?utm_source=qr&igsh=MWRkcTRycWJtanZjeQ==" className="underline ml-2" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </p>
+    <p className="mt-2">&copy; 2025 ComputingLifeSci. All Rights Reserved.</p>
+  </footer>
+);
+
+const CourseSection = ({ title, id, description, videoId }) => (
+  <section id={id} className="bg-white rounded-2xl shadow-md p-6 my-6 mx-auto max-w-3xl">
+    <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+    <iframe
+      className="w-full aspect-video rounded"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      title={title}
+      frameBorder="0"
+      allowFullScreen
+    ></iframe>
+    <p className="mt-4 text-gray-700">{description}</p>
+  </section>
+);
+
+const Home = () => (
+  <>
+    <CourseSection
+      id="python"
+      title="Python for Biologist"
+      videoId="kqtD5dpn9C8" // Example video
+      description="Learn Python programming with practical applications in biological sciences."
+    />
+    <CourseSection
+      id="r"
+      title="R for Biologist"
+      videoId="_V8eKsto3Ug" // Example video
+      description="Introduction to data analysis in biology using R."
+    />
+  </>
+);
+
+const Navbar = () => (
+  <nav className="bg-gray-100 p-4 flex flex-wrap justify-center gap-4 text-blue-900 font-semibold text-sm md:text-base">
+    <Link to="#python" className="hover:underline">Python</Link>
+    <Link to="#r" className="hover:underline">R</Link>
+  </nav>
+);
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Header />
+        <Navbar />
+        <main className="px-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
